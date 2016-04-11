@@ -12,7 +12,7 @@ defmodule Postdump.Mixfile do
 
 
   def application do
-    [applications: [:cowboy, :logger, :plug, :poison],
+    [applications: [:cowboy, :logger, :plug, :poison, :eex],
      mod: {Postdump, []}]
   end
 
