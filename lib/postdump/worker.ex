@@ -17,7 +17,10 @@ defmodule Postdump.Worker do
 
 
   get "/posts" do
-    page_contents = EEx.eval_file("templates/posts.eex", [posts: Postdump.Posts.get])
+
+    eex = Path.join("#{:code.priv_dir(:postdump)}", "templates/posts.eex")
+
+    page_contents = EEx.eval_file(eex, [posts: Postdump.Posts.get])
     conn
     |> Plug.Conn.put_resp_content_type("text/html")
     |> Plug.Conn.send_resp(200, page_contents)
