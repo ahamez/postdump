@@ -20,6 +20,7 @@ defmodule Postdump.Mixfile do
   defp deps do
     [
       {:cowboy  , "~> 1.0"},
+      {:exrm    , "~> 1.0", override: true},
       {:plug    , "~> 1.1"},
       {:poison  , "~> 2.0"},
     ]
